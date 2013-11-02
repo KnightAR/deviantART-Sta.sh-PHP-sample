@@ -1,6 +1,10 @@
 <?php
+if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+    trigger_error("This example only supports PHP Version 5.3.0 or higher. You are using " . phpversion());
+}
+
 //Relies on the oAuth2 library by Pierrick Charron: https://github.com/adoy/PHP-OAuth2/
-require('./lib/oauth2.php');
+require('./PHP-OAuth2/Client.php');
 
 const CLIENT_ID = '0'; // OAuth 2.0 client_id
 const CLIENT_SECRET = '0123456789abcdefghigklmnopqrstuv'; // OAuth 2.0 client_secret
